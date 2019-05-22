@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Acessando Atributos #02</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class='conteudo exercicio'>
+    <div>
+        <label for="compras">Compras</label>
+        <ul id="compras" destino='escritório' data-urgencia="5">
+            <li>Café</li>
+            <li>Água</li>
+            <li>Copo Descartável</li>
+        </ul>
+    </div>
+    <script>
+        const id = document.getElementById('compras')
+        console.log('Compras getElementById',id)
+        const lista0 = document.querySelector('#compras')
+        console.log('Compras querySelector',lista0)
+
+        const lista = document.querySelector('div ul[destino="escritório"]')
+        console.log('childNodes',lista.childNodes)
+
+        console.log('Lista.id', lista.id)
+        console.log('getAttribute', lista.getAttribute('destino'))
+        console.log('hasAttribute', lista.hasAttribute('destino'))
+        lista.setAttribute('destino', 'empresa')// deixou de ser destino
+        // passou a ser empresa.
+        lista.setAttribute('status', 'aberto')//adiciona um atributo q nao existe
+        lista.removeAttribute('destino')// remove um atributo
+
+        console.log(lista.dataset)// pega todos os atributos q iniciam com data//desconsidera o set
+
+        // ...
+    </script>
+</body>
+
+</html>

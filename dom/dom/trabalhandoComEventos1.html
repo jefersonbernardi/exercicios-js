@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='UTF-8'>
+    <title>Trabalhando com Eventos #01</title>
+    <link rel='stylesheet' href='css/estilo.css'>
+</head>
+
+<body class="conteudo exercicio">
+    <div>
+        <a href="https://google.com.br" onclick="navegarEm5s(event)">Google</a>
+    </div>
+    <script>
+        // Interceptar o click para esperar 5s para dps ir para pagina
+        // do google...
+
+        function navegarEm5s(e) {
+            e.preventDefault()
+            console.log('Saindo em 5s')
+            setTimeout(() => {
+                const link = e.target
+                window.location.href = link.href
+            }, 5000)
+        }
+    </script>
+</body>
+
+
+<!-- <body>
+    <div>
+      <a espera-um-pouco="5" href="https://google.com.br" onclick="navegarEmXs(event)">Google</a>
+    </div>
+    <script>
+      function navegarEmXs(e) {
+        e.preventDefault()
+        const tempo = parseInt(e.target.getAttribute('espera-um-pouco'))
+        console.log(`Saindo em ${tempo}s...`)
+        regressivo(tempo)
+        setTimeout(() => {
+          const link = e.target
+          window.location.href = link.href
+        }, tempo * 1000)
+      }
+   
+      function regressivo(tempo) {
+        // setInterval para que ela seja executada a cada 1 segundo
+        setInterval(() => {
+          const div = document.querySelector('div')
+          div.innerHTML = `<p>Você será redirecionado em ${tempo} Segundo(s)</p>`
+          tempo-- // diminui o tempo a cada vez que for executada a função
+        }, 1000);
+      }
+    </script>
+  </body>
+   -->
