@@ -26,11 +26,15 @@ const produtos = [{
 {
     nome: 'Copo de vidro',
     preco: 250,
-    fragil: true
 }
 ]
 
 const caro = produto => produto.preco >= 1000
 const fragil = p => p.fragil
+const copo = (p) =>{ if (p.nome  == 'Copo de vidro'){
+    return true
+}}
+// console.log(produtos.filter(caro).filter(fragil))
 
-console.log(produtos.filter(caro).filter(fragil))
+
+console.log(produtos.filter(copo) == (produtos.copo))
